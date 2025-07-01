@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>For My Bhai & Behen 💞</title>
+  <style>
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body, html {
+      height:100%;
+      font-family:'Poppins', sans-serif;
+      overflow: hidden;
+    }
+    body {
+      background: url('rakhi.gif') no-repeat center center fixed;
+      background-size: cover;
+      color: white;
+      text-align: center;
+    }
+    #start-screen {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.8);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      z-index: 9;
+    }
+    #start-screen h1 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+    #start-screen button {
+      padding: 15px 30px;
+      font-size: 1.2rem;
+      background: #ff5c8d;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.3s ease;
+    }
+    #start-screen button:hover {
+      background: #ff3260;
+    }
+    #content {
+      opacity: 0;
+      transition: opacity 2s ease-in-out;
+      margin-top: 40vh;
+    }
+    #content.fade-in {
+      opacity: 1;
+    }
+    .shayari h1 { font-size: 2.5rem; margin-bottom: 10px; }
+    .shayari p { font-size: 1.5rem; }
+  </style>
+</head>
+<body>
+
+  <div id="start-screen">
+    <h1>Start with song? 🎵</h1>
+    <button onclick="startSite()">Yes, play it!</button>
+  </div>
+
+  <audio id="bgmusic" loop>
+    <source src="dhaagon.mp3" type="audio/mpeg">
+  </audio>
+
+  <div id="content" class="shayari">
+    <h1>Dhaagon se baandha hai, rishta pyaar ka...</h1>
+    <p>Behen tu hai toh har pal bhi mehsoos hota hai khaas...</p>
+  </div>
+
+  <script>
+    function startSite() {
+      document.getElementById('bgmusic').play();
+      document.getElementById('start-screen').style.display = 'none';
+      document.getElementById('content').classList.add('fade-in');
+    }
+  </script>
+
+</body>
+</html>
